@@ -8,11 +8,11 @@ jQuery(function ($) {
         var $scroll = $window.scrollTop();
         var $navbar = $(".navbar");
         if (!$navbar.hasClass("sticky-bottom")) {
-            if ($scroll > 250) {
-                $(".main-logo").html('<img src="././education/img/logo-white.png" alt="logo" class="logo-dark default">');
+            if ($scroll > 650) {
+                //$(".main-logo").html('<img src="././education/img/logo-white.png" alt="logo" class="logo-dark default">');
                 $navbar.addClass("fixed-menu");
             } else {
-                $(".main-logo").html('<img src="././education/img/logo-img.png" alt="logo" class="logo-dark default">');
+                //$(".main-logo").html('<img src="././education/img/logo-img.png" alt="logo" class="logo-dark default">');
                 $navbar.removeClass("fixed-menu");
             }
         }

@@ -90,7 +90,7 @@
 
             <nav class="navbar1">
             <a class="close-outerwindow"><i class="las la-times"></i></a>
-                <a href="#background-carousal"><img src="static/picture/logo-img.png" alt="logo" class="logo-small-nav default"></a>
+                <a href="#background-carousal"> <img src="static/picture/logo-img.png" alt="logo" class="logo-small-nav default" style="width: 20%; height: 20%;"> </a>
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link active" href="">首页</a>
@@ -149,66 +149,33 @@
 
                         <div class="container">
                             <div class="row content-carousal">
+                                <!--col-sm-12:
 
-                                <div class="col-sm-12 col-lg-6 d-flex justify-content-center align-items-center">
-                                <div class="row margin-top-sm">
+在 小屏幕（sm, 小于 576px） 下，这个 列（col）占据 12 列（全宽）。
+col-lg-6:
 
-                                    <div class="col-6 mini-slider p-0">
+在 大屏幕（lg, 大于 992px） 下，这个 列（col）占据 6 列（即 50% 宽度）。
+d-flex justify-content-center align-items-center:
 
-                                        <div id="carouselExampleSlidesOnly" class="carousel slide image-div" data-ride="carousel">
-                                            <div class="carousel-inner">
-                                                <div class="carousel-item active">
-                                                    <img class="d-block w-100" src="static/picture/box-img-1.png" alt="First slide">
-                                                </div>
-                                                <div class="carousel-item animation1">
-                                                    <img class="d-block w-100" src="static/picture/box-img-2.png" alt="Second slide">
-                                                </div>
-                                                <div class="carousel-item animation2">
-                                                    <img class="d-block w-100" src="static/picture/box-img-3.png" alt="Second slide">
-                                                </div>
+这些是 Flexbox 布局的类，用于让内容在垂直和水平方向上居中：
+d-flex → 启用 Flexbox
+justify-content-center → 水平居中（X 轴）
+align-items-center → 垂直居中（Y 轴）
+col-height:
 
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="col-6 p-0">
-                                        <a href="" class="text-decoration-none">
-                                        <div class="custom-box bg-green-color">
-                                            <div class="bg-study-icon">
-                                                <i class="las la-school"></i>
-                                            </div>
-                                            <h1 class="box-text mb-sm-2 mt-sm-2 mb-md-3 mt-md-3 mb-lg-3 mt-lg-3">最新学生案例</h1>
-                                            <div class="arrow-box">
-                                                <i class="las la-arrow-right"></i>
-                                            </div>
-                                        </div>
-                                        </a>
-
-                                        <a href="" class="text-decoration-none">
-                                        <div class="custom-box bg-blue-color">
-                                            <div class="bg-campus-icon">
-                                                <i class="las la-university"></i>
-                                             </div>
-                                            <h1 class="box-text">最新大学排名</h1>
-                                            <div class="arrow-box1">
-                                                <i class="las la-arrow-right"></i>
-                                            </div>
-                                        </div>
-                                        </a>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                                <div class="col-sm-12 col-lg-6 d-flex justify-content-center align-items-center col-height text-left">
+可能是 自定义 CSS 类，用于固定列的高度：-->
+                                <div class="col-sm-12 col-lg-7 d-flex justify-content-center align-items-center col-height text-left">
                                 <div class="col-1 column-display"></div>
 
                                     <div class="detail-sec">
-                                        <h1 class="main-heading">高质量定制化服务助力梦想起航.</h1>
-                                        <p class="sub-heading margin-sub-heading">全博士、博后专业团队全程一对一指导，填坑铺路，确保最大化您的优势拿下最理想的offer.</p>
-                                        <a class="btn btn-primary rounded-pill green-btn">我们的服务</a>
-                                     </div>
+                                        <h1 class="main-heading">高质量&nbsp定制化&nbsp助力梦想起航! </h1>
+                                        <ul class="sub-heading margin-sub-heading">
+                                            <li>全博士、博后专业团队全程一对一指导、专家把关</li>
+                                            <li>打下价格 提升质量 最大化您的优势</li>
+                                            <li>Cheers! Offer! </li>
+                                        </ul>                                        
+                                        <a class="btn btn-primary rounded-pill blue-btn2">我们的服务</a>
+                                    </div>
                             </div>
 
                             </div>
@@ -227,8 +194,8 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-lg-8 offset-lg-2 text-center">
-                <h1 class="main-heading green-color">我们是<span class="blue-color"> 谁？</span></h1>
-                <p class="sub-heading text-black">我们是一群英区博士后和毕业博士lead、全球博士生团队组成的定制化咨询解惑&文书工作室班子。我们期望竭尽所能用最高质量的服务，最大化您逐梦的成功率。</p>
+                <h1 class="main-heading green-color">我们是<span class="blue-color">谁？</span></h1>
+                <p class="sub-heading text-black">我们是一群由英区博士后和毕业博士发起、<br>全球各领域Dr和在读博士组成的定制化PhD咨询&文书工作室班子。</p>
             </div>
         </div>
 
@@ -240,8 +207,8 @@
                         <div class="feature-icon green-color">
                             <i class="las la-globe"></i>
                         </div>
-                        <h2 class="card-title">Worldwide Recognize</h2>
-                        <p class="card-text sub-heading">Lorem ipsum dolor sit amet, adipi elit et dolore magna, sed do incididunt</p>
+                        <h2 class="card-title">专家定制</h2>
+                        <p class="card-text sub-heading">提供<strong>专业的，高质量的，有温度的</strong>服务，将你送入<strong>合适的，梦想的</strong>大学</p>
                     </div>
                 </div>
             </div>
@@ -252,8 +219,8 @@
                         <div class="feature-icon blue-color">
                             <i class="las la-gem"></i>
                         </div>
-                        <h2 class="card-title">Top Ranking</h2>
-                        <p class="card-text sub-heading">Lorem ipsum dolor sit amet, adipi elit et dolore magna, sed do incididunt</p>
+                        <h2 class="card-title">能力进阶</h2>
+                        <p class="card-text sub-heading">在申博阶段就培养同学们的<strong>综合科研能力</strong>，为学术界输送新鲜力量</p>
                     </div>
                 </div>
             </div>
@@ -264,8 +231,8 @@
                         <div class="feature-icon green-color">
                             <i class="las la-chalkboard-teacher"></i>
                         </div>
-                        <h2 class="card-title">Best Teachers</h2>
-                        <p class="card-text sub-heading">Lorem ipsum dolor sit amet, adipi elit et dolore magna, sed do incididunt</p>
+                        <h2 class="card-title">一路相伴</h2>
+                        <p class="card-text sub-heading">不仅可以为你带来<strong>offer</strong>，还可以成为你学业道路上的<strong>伙伴</strong></p>
                     </div>
                 </div>
             </div>
@@ -276,8 +243,8 @@
                         <div class="feature-icon blue-color">
                             <i class="las la-book-open"></i>
                         </div>
-                        <h2 class="card-title">Many Courses</h2>
-                        <p class="card-text sub-heading">Lorem ipsum dolor sit amet, adipi elit et dolore magna, sed do incididunt</p>
+                        <h2 class="card-title">完全透明</h2>
+                        <p class="card-text sub-heading">在高质量申请支持过程中，<strong>透明整个流程</strong>，让同学们对进度清清楚楚</p>
                     </div>
                 </div>
             </div>
@@ -288,8 +255,8 @@
                         <div class="feature-icon green-color">
                             <i class="las la-graduation-cap"></i>
                         </div>
-                        <h2 class="card-title">Scholarships</h2>
-                        <p class="card-text sub-heading">Lorem ipsum dolor sit amet, adipi elit et dolore magna, sed do incididunt</p>
+                        <h2 class="card-title">高性价比</h2>
+                        <p class="card-text sub-heading">为避免同学未入学就支出天价费用，<strong>优化了</strong>传统服务模式，<strong>打下了</strong>价格</p>
                     </div>
                 </div>
             </div>
@@ -300,8 +267,8 @@
                         <div class="feature-icon blue-color">
                             <i class="las la-paper-plane"></i>
                         </div>
-                        <h2 class="card-title">Events</h2>
-                        <p class="card-text sub-heading">Lorem ipsum dolor sit amet, adipi elit et dolore magna, sed do incididunt</p>
+                        <h2 class="card-title">顶尖推研</h2>
+                        <p class="card-text sub-heading">对杰出申请人，专家团队可提供<strong>世界顶级</strong>研、企<strong>正规项目合作/实习</strong>推荐</p>
                     </div>
                 </div>
             </div>
