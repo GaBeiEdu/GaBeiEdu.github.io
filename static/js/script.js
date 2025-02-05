@@ -8,7 +8,7 @@ jQuery(function ($) {
         var $scroll = $window.scrollTop();
         var $navbar = $(".navbar");
         if (!$navbar.hasClass("sticky-bottom")) {
-            if ($scroll > 650) {
+            if ($scroll > 700) {
                 //$(".main-logo").html('<img src="././education/img/logo-white.png" alt="logo" class="logo-dark default">');
                 $navbar.addClass("fixed-menu");
             } else {
@@ -562,3 +562,11 @@ $('[data-fancybox]').fancybox({
 
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    let progressBars = document.querySelectorAll(".progress-bar");
+    progressBars.forEach(bar => {
+        let value = bar.getAttribute("data-value"); // 读取 data-value
+        bar.style.width = value + "%"; // 设置宽度
+        bar.innerHTML = `<span>${value}%</span>`; // 显示百分比
+    });
+});

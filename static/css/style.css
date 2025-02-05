@@ -46,11 +46,6 @@
 
 body{
     color: #5f5d5d;
-    font-family: 'Microsoft YaHei', sans-serif;
-}
-
-.bg-no-color{
-    background-color: transparent !important; /* 设置透明背景 */
 }
 .bg-green-color{
     background-color: #94cb00;
@@ -92,7 +87,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 
-/*******************LOADER*进去界面的特效***************/
+/*******************LOADER****************/
 .loader1{
     overflow: hidden !important;
 }
@@ -369,58 +364,40 @@ h1, h2, h3, h4, h5, h6{
 
 
 
-
 /************************NAVBAR FOR LARGE SCREENS*****************/
-.navbar .container {
-    max-width: 100% !important;
-    padding-right: 20px;
-}
 
-header .navbar-light-vision {
-    z-index: 11;
-    position: fixed;
+header .navbar-light-vision{
     top: 0;
-    left:0;
-    right:0;
-    overflow: auto;
-    height: 70px;
+    overflow: hidden;
+    height: 90px;
+    width: 100%;
+    -webkit-transition: all .1s ease;
+    -o-transition: all .1s ease;
+    transition: all .1s ease;
+    z-index: 11;
+    position: absolute;
+    background-color: transparent !important;
 
-    background-color: #F1EEE7 !important;
-/*    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.50);
-    box-shadow: 0 0 10px rgba(0,0,0,.50);
-*/
 }
 .navbar .nav-item a.nav-link{
     font-size: 15px;
     font-family: 'Montserrat', sans-serif;;
     color: black;
     text-decoration: none;
-    /************************每隔右边距离*****************/
     margin-right: 30px;
 }
 .navbar-light .navbar-nav .nav-link.active{
-    color: #000000;
+    color: black;
 }
 
 .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
-    color: #ffffff;
+    color: black;
 }
 
 .logo img{
     height: 100%;
     width: 100%;
 }
-.logo {
-    position: absolute;
-    left: 30px; /* 靠左 20px */
-    top: 50%;
-    transform: translateY(-50%); /* 垂直居中 */
-}
-.navbar .container {
-    display: flex;
-    justify-content: center; /* 菜单居中 */
-}
-
 .my-tog-btn{
     display: none;
     width: 25px;
@@ -434,7 +411,7 @@ header .navbar-light-vision {
 }
 .navbar-btn{
     background-color: #00b0cd;
-    border-color: #ffffff;
+    border-color: #00b0cd;
     cursor: pointer;
     padding: 9px 25px 9px 25px;
     text-align: center;
@@ -474,7 +451,7 @@ nav.fill ul li a {
 nav.stroke ul li a:after,
 nav.fill ul li a:after {
     position: absolute;
-    bottom: 51px;
+    bottom: 59px;
     left: 0;
     right: 0;
     margin: auto;
@@ -502,7 +479,7 @@ nav.fill ul li a:after {
     opacity: 0;
 }
 nav.fill ul li a:hover, nav.fill ul li a.active {
-    color: #fff;
+    color: black;
     z-index: 1;
 }
 nav.fill ul li a:hover:after, nav.fill ul li a.active:after {
@@ -517,7 +494,7 @@ nav.fill ul li a:hover:after, nav.fill ul li a.active:after {
 }
 .navbar.fixed-menu .navbar-btn:hover,
 .navbar.fixed-menu .navbar-btn:focus{
-    border: 2px solid #94cb00;
+    border: 1px solid #94cb00;
     background-color: #94cb00 !important;
 }
 .navbar.fixed-menu {
@@ -527,13 +504,13 @@ nav.fill ul li a:hover:after, nav.fill ul li a.active:after {
     left:0;
     right:0;
     overflow: auto;
-    background-color: #00b0cd !important;
+    background-color: white !important;
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,.50);
     box-shadow: 0 0 10px rgba(0,0,0,.50);
     -webkit-animation-name: animationFade;
     animation-name: animationFade;
-    -webkit-animation-duration: 0.3s;
-    animation-duration: 0.3s;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
 
@@ -563,30 +540,23 @@ nav.fill ul li a:hover:after, nav.fill ul li a.active:after {
     }
 }
 
-
 /***************MAIN CONTENT ON BACKGROUND IMAGE*****************/
 
 .main-content .main-heading{
     font-size: 60px;
-    font-family: 'Microsoft YaHei' , sans-serif;
+    font-family: 'Montserrat' , sans-serif;
     font-weight: bold;
     line-height: 1.1;
     text-align: left;
-    letter-spacing: -1px;
+    letter-spacing: -3px;
     color: black;
-    margin-top: -180px; /* 让 h1 向右扩展 */
-    margin-right: -500px; /* 让 h1 向右扩展 */
-
 }
 
 .margin-sub-heading{
     color: black;
     margin-bottom: 20px;
-    margin-top: 150px;
-    line-height: 2; /* 让行间距变大 */
-
+    margin-top: 20px;
 }
-
 
 .main-content .sub_heading{
     font-size: 15px;
@@ -632,22 +602,7 @@ nav.fill ul li a:hover:after, nav.fill ul li a.active:after {
     -o-transition: 0.5s ease;
     transition: 0.5s ease;
 }
-.blue-btn2{
-    background-color: #00b0cd;
-    border: 1px solid #00b0cd;
-    cursor: pointer;
-    padding: 11px 39px 11px 39px;
-    text-align: center;
-    font-size: 15px !important;  /* 设置按钮内字体大小 */
-    font-family: 'Microsoft YaHei', sans-serif; /* 让字体更清晰 */
-    -webkit-transition: 0.5s ease;
-    -o-transition: 0.5s ease;
-    transition: 0.5s ease;
-}
-.blue-btn2:hover{
-    background-color: #94cb00;
-    border: 1px solid #94cb00;
-}
+
 .green-btn:hover{
     background-color: #00b0cd;
     border: 1px solid #00b0cd;
@@ -678,7 +633,7 @@ a.btn{
     text-align: left;
     letter-spacing: 0;
     position: relative;
-    color: black;
+    color: #ffffff;
 }
 
 /*****************BOXES AND ARROW BOX HOVER***************/
@@ -1093,18 +1048,14 @@ ul.social-icon li a{
 }
 
 .main-heading{
-    font-size: 55px;
-    font-family: 'Microsoft YaHei' , sans-serif;
-    word-spacing: 10px;
+    font-size: 45px;
+    font-family: 'Montserrat' , sans-serif;
+    letter-spacing: -3px;
     font-weight: normal;
-    margin-bottom: 50px;
-    
 }
 .sub-heading{
-    font-size: 20px;
-    font-family: 'Microsoft YaHei', sans-serif;
-    margin-left: -30px;
-    margin-right: -30px;
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
 }
 .feature-icon{
     font-size: 55px;
@@ -1536,8 +1487,8 @@ ul.social-icon li a{
     transition: 0.5s ease;
 }
 .blog-item:hover{
-    -webkit-box-shadow: 1px 1px 14px #f2f2f2;
-    box-shadow: 1px 1px 14px #f2f2f2;
+    -webkit-box-shadow: 1px 1px 14px #e1e1e1;
+    box-shadow: 1px 1px 14px #e1e1e1;
     -webkit-transform: translateY(-16px);
     -ms-transform: translateY(-16px);
     transform: translateY(-16px);
@@ -1612,7 +1563,7 @@ li.footer_list{
 .footer-content{
     padding-top: 8%;
     margin-bottom: 8%;
-    border-top: 1px solid #f2f2f2;
+    border-top: 1px solid #e1e1e1;
 
 }
 .footer-icon{
@@ -1949,7 +1900,7 @@ header .navbar-dark-vision .navbar-btn:hover{
     margin-top: 15px;
 }
 .courses .course-text{
-    border-top: 1px solid #f2f2f2;
+    border-top: 1px solid #e1e1e1;
 }
 .courses .sub-heading{
     font-size: 13px;
@@ -3796,3 +3747,200 @@ input[type=checkbox]:not(old):checked + label > span {
 .list-item {
     position: absolute;
     width: 100%; }
+
+
+/* 通用初始化 */
+/* 自定义“Contact us”区块作用域 */
+#contact.my-contact-section {
+    position: relative;
+    min-height: 80vh;
+    background: linear-gradient(to bottom, white, #F1EEE7);
+  }
+  
+  /* 在背景之上叠加渐变, 提升左侧文字对比度 */
+
+  
+  /* 让内部 .et_pb_row_22 显示在渐变上层 */
+  #contact.my-contact-section .et_pb_row_22 {
+    position: relative;
+    z-index: 2;
+    width: 100%;      /* 使用 100% 宽度 */
+    margin: 0;        /* 不再居中固定宽度的容器 */
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 2rem;
+}
+
+  /* 左侧标题、文字、社交图标 */
+  #contact.my-contact-section .contact-left {
+    flex: 1 1 50%;
+    color: black;
+  }
+  #contact.my-contact-section .contact-left h2.et_pb_module_heading {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  #contact.my-contact-section .contact-left p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  #contact.my-contact-section .contact-left a {
+    color: #00aeef;
+    text-decoration: none;
+  }
+  #contact.my-contact-section .contact-left a:hover {
+    text-decoration: underline;
+  }
+  #contact.my-contact-section .social-icons {
+    display: flex;
+    gap: 1rem;
+  }
+  #contact.my-contact-section .social-icons a {
+    width: 40px;
+    height: 40px;
+    background-color: #00aeef; /* Instagram 按钮颜色 */
+    border-radius: 50%;
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
+  #contact.my-contact-section .social-icons a.linkedin {
+    background-color: #0077b5; /* LinkedIn */
+  }
+  #contact.my-contact-section .social-icons a:hover {
+    background-color: #006f8c; 
+  }
+  
+  /* 右侧表单卡片 */
+  #contact.my-contact-section .contact-right {
+    flex: 1 1 40%;
+    background: #00b0cd;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    color: #fff;
+  }
+  
+  /* 表单字段 */
+  #contact.my-contact-section .et_pb_contact_form_0 p.et_pb_contact_field {
+    margin-bottom: 1.5rem;
+  }
+  
+  #contact.my-contact-section .et_pb_contact_form_0 label {
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+    display: inline-block;
+  }
+  
+  /* 输入框、文本域 */
+  #contact.my-contact-section .et_pb_contact_form_0 input[type="text"],
+  #contact.my-contact-section .et_pb_contact_form_0 textarea {
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    padding: 0.8rem;
+    color: #333;
+    font-size: 1rem;
+    outline: none;
+  }
+  #contact.my-contact-section .et_pb_contact_form_0 textarea {
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    padding: 0.8rem;
+    color: #333;
+    font-size: 1rem;
+    outline: none;
+  }
+    
+  /* 复选框组 */
+  #contact.my-contact-section .et_pb_contact_form_0 p[data-id="checkbox"] label {
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.5rem;
+  }
+  #contact.my-contact-section .et_pb_contact_form_0 p[data-id="checkbox"] input[type="checkbox"] {
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+  
+  /* 提交按钮 */
+  #contact.my-contact-section .et_pb_contact_submit.et_pb_button {
+    background: #94cb00;
+    border: none;
+    border-radius: 16px;
+    padding: 0.6rem 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-left: 340px;  /* 根据需要调整数值 */
+
+  }
+  #contact.my-contact-section .et_pb_contact_submit.et_pb_button:hover {
+    background: #95cb0098;
+  }
+  
+  /* 小屏自适应 */
+  @media (max-width: 768px) {
+    #contact.my-contact-section .et_pb_row_22 {
+      flex-direction: column;
+      padding: 2rem;
+    }
+    #contact.my-contact-section .contact-left,
+    #contact.my-contact-section .contact-right {
+      flex: 1 1 100%;
+      margin: 0;
+    }
+    #contact.my-contact-section .contact-left h2.et_pb_module_heading {
+      font-size: 2rem;
+    }
+  }
+/* 隐藏原生复选框 */
+.et_pb_contact_field_checkbox input[type=checkbox] {
+    display: none;
+}
+
+/* 自定义复选框的外观，使用 label 的伪元素 */
+.et_pb_contact_field_checkbox label {
+    position: relative;
+    padding-left: 25px; /* 给自定义方框留出位置 */
+    cursor: pointer;
+}
+
+/* 添加自定义方框 */
+.et_pb_contact_field_checkbox label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ebebeb;
+    background: white;
+}
+
+/* 复选框选中状态下显示打钩 */
+.et_pb_contact_field_checkbox input[type=checkbox]:checked + label::after {
+    content: "✓";
+    position: absolute;
+    left: 3px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #000;
+}
+@media (min-width: 1200px) {
+    #contact.my-contact-section .et_pb_row_22 {
+        max-width: 1200px;
+        margin: 0 auto; /* 居中 */
+    }
+  }
