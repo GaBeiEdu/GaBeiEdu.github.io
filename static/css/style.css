@@ -379,11 +379,12 @@ header .navbar-light-vision{
     background-color: transparent !important;
 
 }
+
 .navbar .nav-item a.nav-link{
     font-size: 15px;
     font-family: 'Montserrat', sans-serif;;
     color: black;
-    text-decoration: none;
+    text-decoration: none;  
     margin-right: 30px;
 }
 .navbar-light .navbar-nav .nav-link.active{
@@ -498,7 +499,7 @@ nav.fill ul li a:hover:after, nav.fill ul li a.active:after {
     background-color: #94cb00 !important;
 }
 .navbar.fixed-menu {
-    z-index: 11;
+    z-index: 111;
     position: fixed;
     top: 0;
     left:0;
@@ -541,7 +542,9 @@ nav.fill ul li a:hover:after, nav.fill ul li a.active:after {
 }
 
 /***************MAIN CONTENT ON BACKGROUND IMAGE*****************/
+/* 如果导航fixed在顶部，高度90px */
 
+  
 .main-content .main-heading{
     font-size: 60px;
     font-family: 'Montserrat' , sans-serif;
@@ -3278,7 +3281,7 @@ a.page-link{
 
 }
 
-@media (min-width:769px) and (max-width:991px) {
+@media (min-width:933px) and (max-width:991px) {
     .margin_small {
         margin-top: 30px;
     }
@@ -3303,6 +3306,33 @@ a.page-link{
         display: block;
     }
 }
+
+@media (min-width:769px) and (max-width:933px) {
+    .margin_small {
+        margin-top: 30px;
+    }
+    ul.social-icon{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+    .social_icon {
+        position: absolute;
+        right: auto;
+        top: 93%;
+        left: 18%;
+    }
+    .margin-top-sm{
+        margin-top: 100px;
+    }
+    .col-height{
+        height: 45vh;
+    }
+    .my-tog-btn{
+        display: block;
+    }
+}
+
 
 @media screen and (max-width:768px){
     .cbp-l-filters .cbp-filter-item {
@@ -3532,10 +3562,10 @@ a.page-link{
         margin-top: 145px;
     }
     .main-content .main-heading {
-        font-size: 37px;
+        font-size: 6vw;
     }
     .main-content .sub_heading{
-        font-size: 13px;
+        font-size: 3vw;
     }
     .image-div {
         width: 100%;
@@ -3762,16 +3792,15 @@ input[type=checkbox]:not(old):checked + label > span {
   
   /* 让内部 .et_pb_row_22 显示在渐变上层 */
   #contact.my-contact-section .et_pb_row_22 {
-    position: relative;
-    z-index: 2;
-    width: 100%;      /* 使用 100% 宽度 */
-    margin: 0;        /* 不再居中固定宽度的容器 */
     display: flex;
-    gap: 2rem;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: space-between;
+    gap: 2rem;
     padding: 3rem 2rem;
-}
+    max-width: 1200px;
+    margin: 0 auto; /* 居中 */
+  }
 
   /* 左侧标题、文字、社交图标 */
   #contact.my-contact-section .contact-left {
@@ -3863,9 +3892,8 @@ input[type=checkbox]:not(old):checked + label > span {
   #contact.my-contact-section .et_pb_contact_form_0 p[data-id="checkbox"] label {
     font-weight: normal;
     display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    margin-bottom: 0.5rem;
+    flex-direction: column;
+    align-items: flex-start;  /* 按钮在右侧 */
   }
   #contact.my-contact-section .et_pb_contact_form_0 p[data-id="checkbox"] input[type="checkbox"] {
     transform: scale(1.2);
@@ -3874,7 +3902,9 @@ input[type=checkbox]:not(old):checked + label > span {
   
   /* 提交按钮 */
   #contact.my-contact-section .et_pb_contact_submit.et_pb_button {
-    background: #94cb00;
+    margin-left: 0; 
+    margin-top: 1rem;
+    background: #94cb00; /* 原先的提交按钮色 */
     border: none;
     border-radius: 16px;
     padding: 0.6rem 1.2rem;
@@ -3882,7 +3912,6 @@ input[type=checkbox]:not(old):checked + label > span {
     color: #fff;
     cursor: pointer;
     transition: background 0.3s ease;
-    margin-left: 340px;  /* 根据需要调整数值 */
 
   }
   #contact.my-contact-section .et_pb_contact_submit.et_pb_button:hover {
@@ -3893,15 +3922,64 @@ input[type=checkbox]:not(old):checked + label > span {
   @media (max-width: 768px) {
     #contact.my-contact-section .et_pb_row_22 {
       flex-direction: column;
-      padding: 2rem;
+      padding: 2rem; /* 适当缩小 */
     }
-    #contact.my-contact-section .contact-left,
-    #contact.my-contact-section .contact-right {
+  
+    .contact-left, .contact-right {
       flex: 1 1 100%;
       margin: 0;
     }
-    #contact.my-contact-section .contact-left h2.et_pb_module_heading {
+  
+    /* 标题字体变小 */
+    .contact-left h2.et_pb_module_heading {
       font-size: 2rem;
+    }
+  
+    /* 按钮可保持右对齐，也可改为居中 */
+    .contact-right .et_pb_contact_form_0 {
+      align-items: center; /* 如果想居中，就这样改 */
+    }
+  }
+  @media (max-width: 680px) {
+    #contact.my-contact-section .et_pb_row_22 {
+      flex-direction: column;
+      padding: 2rem; /* 适当缩小 */
+    }
+  
+    .contact-left, .contact-right {
+      flex: 1 1 100%;
+      margin: 0;
+    }
+  
+    /* 标题字体变小 */
+    .contact-left h2.et_pb_module_heading {
+      font-size: 2rem;
+    }
+  
+    /* 按钮可保持右对齐，也可改为居中 */
+    .contact-right .et_pb_contact_form_0 {
+      align-items: center; /* 如果想居中，就这样改 */  
+    }
+    .main-content {
+        padding-top: 30px; 
+        /* 或者 margin-top: 90px; */
+    }
+  }
+  
+  /* 更小屏幕，如480px以下时的微调 */
+  @media (max-width: 480px) {
+    .contact-left h2.et_pb_module_heading {
+      font-size: 1.6rem; 
+    }
+    .contact-left p {
+      font-size: 1rem;
+    }
+  
+    /* 如果想按钮更容易点，可以全宽 */
+    .contact-right .et_pb_contact_submit.et_pb_button {
+      width: 100%; 
+      text-align: center;
+      margin: 1rem 0 0;
     }
   }
 /* 隐藏原生复选框 */
