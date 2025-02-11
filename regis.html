@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 引入 Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="stylesheet" href="regis.css" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form id="signupForm">
+                <h1>创建账户</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fa-brands fa-weixin"></i></a>
+                    <a href="#" class="social"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#" class="social"><i class="fa-brands fa-weibo"></i></a>
+                </div>
+                <span>或使用您的电子邮箱账户注册</span>
+                <input type="text" name="username" placeholder="用户名" required />
+                <input type="email" name="email" placeholder="电子邮箱地址" required />
+                <input type="password" name="password" placeholder="密码" required />
+                <button type="submit">注册</button>
+            </form>
+        </div>
+        
+        <div class="form-container sign-in-container">
+            <form id="signinForm">
+                <h1>登录</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fa-brands fa-weixin"></i></a>
+                    <a href="#" class="social"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#" class="social"><i class="fa-brands fa-weibo"></i></a>
+                </div>
+                <span>或使用您的账户登录</span>
+                <input type="email" name="email" placeholder="电子邮箱地址" required />
+                <input type="password" name="password" placeholder="密码" required />
+                <a href="#">忘记密码？</a>
+                <button type="submit">登录</button>
+            </form>
+        </div>
+        
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>欢迎回来！</h1>
+                    <p>快速输入您的信息登录，保持我们连接</p>
+                    <button class="ghost" id="signIn">去登录</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>您好，朋友！</h1>
+                    <p>输入你的个人信息，与我们一起开启新的旅程</p>
+                    <button class="ghost" id="signUp">去注册</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const signUpBtn = document.querySelector("#signUp");
+        const signInBtn = document.querySelector("#signIn");
+        const container = document.querySelector(".container");
+        
+        signUpBtn.addEventListener("click", () => {
+            container.classList.add("right-panel-active");
+        });
+        
+        signInBtn.addEventListener("click", () => {
+            container.classList.remove("right-panel-active");
+        });
+
+        // 修改 fetch 请求的 URL
+        const API_URL = 'http://localhost:3000/api';
+        
+        // 注册表单处理
+        document.getElementById('signupForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            
+            try {
+                const response = await fetch(`${API_URL}/register`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        username: formData.get('username'),
+                        email: formData.get('email'),
+                        password: formData.get('password')
+                    })
+                });
+                
+                const data = await response.json();
+                if (response.ok) {
+                    alert('注册成功！');
+                    container.classList.remove("right-panel-active");
+                } else {
+                    alert(data.error || '注册失败');
+                }
+            } catch (error) {
+                alert('注册失败，请稍后重试');
+                console.error('注册错误:', error);
+            }
+        });
+
+        // 登录表单处理
+        document.getElementById('signinForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            
+            try {
+                const response = await fetch(`${API_URL}/login`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        email: formData.get('email'),
+                        password: formData.get('password')
+                    })
+                });
+                
+                const data = await response.json();
+                if (response.ok) {
+                    alert('登录成功！');
+                    // 登录成功后可以重定向到主页或仪表板
+                    // window.location.href = '/dashboard';
+                } else {
+                    alert(data.error || '登录失败');
+                }
+            } catch (error) {
+                alert('登录失败，请稍后重试');
+                console.error('登录错误:', error);
+            }
+        });
+    </script>
+</body>
+</html>
